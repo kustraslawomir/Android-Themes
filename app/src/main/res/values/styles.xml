@@ -3,17 +3,20 @@
         <item name="colorPrimary">@color/red</item>
         <item name="colorPrimaryDark">@color/darkRed</item>
         <item name="colorAccent">@color/darkGrey</item>
+        <item name="defaultScreenBackground">@color/backgroundRed</item>
     </style>
 
     <style name="GreenTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryDark">@color/darkGreen</item>
         <item name="colorAccent">@color/darkGrey</item>
+        <item name="defaultScreenBackground">@color/backgroundGreen</item>
     </style>
 
     <style name="BlueTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryDark">@color/darkBlue</item>
         <item name="colorAccent">@color/darkGrey</item>
+        <item name="defaultScreenBackground">@color/backgroundBlue</item>
     </style>
 </resources>
