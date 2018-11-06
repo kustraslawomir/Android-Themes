@@ -11,7 +11,7 @@ import themes.kustra.pl.themes.utils.Constants.Companion.THEME_COLOR
 import themes.kustra.pl.themes.utils.Constants.Companion.GREEN
 import themes.kustra.pl.themes.utils.Constants.Companion.RED
 
-class MainActivity : AppCompatActivity() {
+class ThemeActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -39,20 +39,20 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
+    private fun getSavedTheme(): Int {
+        val theme = getPreferences(Context.MODE_PRIVATE).getString(THEME_COLOR, RED)
+        return when (theme) {
+            RED -> R.style.DefaultAppTheme
+            BLUE -> R.style.DefaultAppTheme_BlueTheme
+            GREEN -> R.style.DefaultAppTheme_GreenTheme
+            else -> R.style.DefaultAppTheme
+        }
+    }
+
     private fun saveTheme(color: String) {
         val editor = getPreferences(Activity.MODE_PRIVATE).edit()
         editor.putString(THEME_COLOR, color)
         editor.apply()
         recreate()
-    }
-
-    private fun getSavedTheme(): Int {
-        val theme = getPreferences(Context.MODE_PRIVATE).getString(THEME_COLOR, RED)
-        return when (theme) {
-            RED -> R.style.RedTheme
-            BLUE -> R.style.BlueTheme
-            GREEN -> R.style.GreenTheme
-            else -> R.style.RedTheme
-        }
     }
 }
